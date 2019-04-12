@@ -4,6 +4,7 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ClientLayoutModule } from './layouts/client-layout/client-layout.module';
 
 const routes: Routes =[
   {
@@ -21,7 +22,14 @@ const routes: Routes =[
   {
     path: '**',
     redirectTo: 'dashboard'
-  }
+  }, {
+    path: 'nutrition',
+    component: ClientLayoutModule,
+    children: [
+        {
+      path: '',
+      loadChildren: './layouts/client-layout/client-layout.module#ClientLayoutModule'
+  }]}
 ];
 
 @NgModule({
