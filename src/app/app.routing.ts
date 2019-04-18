@@ -1,10 +1,10 @@
+import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { ClientLayoutModule } from './layouts/client-layout/client-layout.module';
 
 const routes: Routes =[
   {
@@ -20,16 +20,17 @@ const routes: Routes =[
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
   }]},
   {
-    path: '**',
-    redirectTo: 'dashboard'
-  }, {
     path: 'nutrition',
-    component: ClientLayoutModule,
+    component: ClientLayoutComponent,
     children: [
         {
       path: '',
       loadChildren: './layouts/client-layout/client-layout.module#ClientLayoutModule'
-  }]}
+  }]},
+  {
+    path: '**',
+    redirectTo: 'dashboard'
+  }
 ];
 
 @NgModule({

@@ -1,3 +1,4 @@
+import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -26,8 +27,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent
-
+    AdminLayoutComponent,
+    ClientLayoutComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
